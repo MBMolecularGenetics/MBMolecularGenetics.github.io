@@ -1,11 +1,11 @@
-# Infectious Disease Genomics and Bioinformatics Initiative Website
+# Infectious Disease Genomics Research Group Website
 
-Static GitHub Pages website for a research-focused initiative centered on infectious disease genomics, metagenomics, and bioinformatics collaboration.
+Static GitHub Pages website for a research-focused group centered on infectious disease genomics, metagenomics, and bioinformatics.
 
 ## Pages
 
-- `index.html`: Home and positioning
-- `capabilities.html`: Technical scope and research services
+- `index.html`: Home
+- `research-areas.html`: Research domains and methods
 - `team.html`: Team members loaded from JSON
 - `publications.html`: Publication records loaded from JSON
 
@@ -30,5 +30,5 @@ Add team photos to `assets/images/people/` and keep filenames aligned with each 
 
 ## Notes
 
-- The site is designed as a research collaboration portal, not a clinical diagnostics advertising page.
+- The site is positioned as a research website.
 - Update placeholders (emails, names, DOI values) before final public release.

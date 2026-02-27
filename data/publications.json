@@ -3,8 +3,8 @@
     "id": "pub-2025-001",
     "doi": "10.XXXX/replace-with-real-doi-001",
     "year": 2025,
-    "title": "Clinical and Environmental Pathogen Genomics: Building an Integrated Translational Research Workflow",
-    "abstract": "This work describes a coordinated framework that links infectious disease clinical context with high-throughput sequencing and bioinformatics. We present reproducible quality control and analysis modules for viral, bacterial, and fungal genomic datasets and evaluate their utility for collaborative translational studies.",
+    "title": "Clinical and Environmental Pathogen Genomics: An Integrated Translational Workflow",
+    "abstract": "This work describes a framework linking infectious disease clinical context with high-throughput sequencing and bioinformatics. We present reproducible quality control and analysis modules for viral, bacterial, and fungal genomic datasets and evaluate their utility in translational studies.",
     "publisher": "Publisher to be confirmed"
   },
   {
@@ -20,7 +20,7 @@
     "doi": "10.XXXX/replace-with-real-doi-003",
     "year": 2023,
     "title": "Reproducible Whole-Genome Sequencing Pipelines for Infectious Pathogen Surveillance",
-    "abstract": "This publication outlines an implementation of versioned WGS workflows including preprocessing, assembly, annotation, and variant analysis. We focus on transparent parameterization and cross-site reproducibility to support collaborative outbreak and surveillance research.",
+    "abstract": "This publication outlines versioned WGS workflows including preprocessing, assembly, annotation, and variant analysis. We focus on transparent parameterization and cross-site reproducibility to support outbreak and surveillance research.",
     "publisher": "Publisher to be confirmed"
   }
 ]
