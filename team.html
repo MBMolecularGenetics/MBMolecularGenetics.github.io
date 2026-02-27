@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team | Infectious Disease Genomics and Bioinformatics Initiative</title>
+  <meta name="description" content="Core and affiliated members across bioinformatics, clinical microbiology, and biological sciences.">
+  <meta name="theme-color" content="#0c4f68">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-kicker">INBI Matei Bals | Bucharest</span>
+          <span class="brand-title">Infectious Disease Genomics and Bioinformatics Initiative</span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="capabilities.html">Capabilities</a>
+          <a class="is-active" href="team.html">Team</a>
+          <a href="publications.html">Publications</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="hero-copy">
+            <p class="kicker">People and Structure</p>
+            <h1>A transparent cross-institution team organized by function.</h1>
+            <p class="lead">
+              We include core bioinformatics members, clinical microbiology collaborators,
+              and affiliated biological sciences researchers. This structure reflects
+              the full translational pipeline needed for high-impact infectious disease studies.
+            </p>
+          </article>
+          <aside class="hero-panel">
+            <p class="kicker">Group Model</p>
+            <ul>
+              <li>Core Bioinformatics Team</li>
+              <li>Clinical Collaborators / Clinical Microbiology</li>
+              <li>Affiliated Researchers / Biological Sciences</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div id="people-list" class="data-layout" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container notice">
+          <p class="kicker">Data Source</p>
+          <h3>Team cards are generated from JSON</h3>
+          <p>
+            Edit <code>data/people.json</code> and place images in <code>assets/images/people/</code>
+            to update this page without changing HTML.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>&copy; <span data-year></span> Infectious Disease Genomics and Bioinformatics Initiative</p>
+        <p><a href="capabilities.html">Capabilities</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="scripts/site.js"></script>
+  <script src="scripts/team.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pub-2025-001",
+    "doi": "10.XXXX/replace-with-real-doi-001",
+    "year": 2025,
+    "title": "Clinical and Environmental Pathogen Genomics: Building an Integrated Translational Research Workflow",
+    "abstract": "This work describes a coordinated framework that links infectious disease clinical context with high-throughput sequencing and bioinformatics. We present reproducible quality control and analysis modules for viral, bacterial, and fungal genomic datasets and evaluate their utility for collaborative translational studies.",
+    "publisher": "Publisher to be confirmed"
+  },
+  {
+    "id": "pub-2024-002",
+    "doi": "10.XXXX/replace-with-real-doi-002",
+    "year": 2024,
+    "title": "Comparative Performance of Shotgun Metagenomics and 16S Profiling in Complex Infectious Disease Cohorts",
+    "abstract": "We compare shotgun metagenomic and 16S rRNA strategies for mixed microbial communities from clinically and environmentally relevant samples. The study highlights tradeoffs in taxonomic resolution, interpretability, and analytical reproducibility across sequencing and computational pipelines.",
+    "publisher": "Publisher to be confirmed"
+  },
+  {
+    "id": "pub-2023-003",
+    "doi": "10.XXXX/replace-with-real-doi-003",
+    "year": 2023,
+    "title": "Reproducible Whole-Genome Sequencing Pipelines for Infectious Pathogen Surveillance",
+    "abstract": "This publication outlines an implementation of versioned WGS workflows including preprocessing, assembly, annotation, and variant analysis. We focus on transparent parameterization and cross-site reproducibility to support collaborative outbreak and surveillance research.",
+    "publisher": "Publisher to be confirmed"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "person-001",
+    "name": "Bioinformatics Lead (Add Name)",
+    "role": "Core Bioinformatics Team",
+    "affiliation": "INBI Matei Bals",
+    "bio": "Coordinates computational strategy, pipeline architecture, and integrative analysis for pathogen genomics and metagenomics projects.",
+    "image": "assets/images/people/person-001.jpg",
+    "email": ""
+  },
+  {
+    "id": "person-002",
+    "name": "Bioinformatics Specialist (Add Name)",
+    "role": "Core Bioinformatics Team",
+    "affiliation": "INBI Matei Bals",
+    "bio": "Develops and maintains analysis workflows for WGS, 16S profiling, and comparative genomic interpretation.",
+    "image": "assets/images/people/person-002.jpg",
+    "email": ""
+  },
+  {
+    "id": "person-003",
+    "name": "Clinical Microbiologist (Add Name)",
+    "role": "Clinical Collaborators / Clinical Microbiology",
+    "affiliation": "INBI Matei Bals",
+    "bio": "Provides clinical interpretation context, sample metadata guidance, and microbiology domain expertise.",
+    "image": "assets/images/people/person-003.jpg",
+    "email": ""
+  },
+  {
+    "id": "person-004",
+    "name": "Clinical Microbiologist (Add Name)",
+    "role": "Clinical Collaborators / Clinical Microbiology",
+    "affiliation": "INBI Matei Bals",
+    "bio": "Supports collaborative research design and alignment of genomic findings with clinical microbiology objectives.",
+    "image": "assets/images/people/person-004.jpg",
+    "email": ""
+  },
+  {
+    "id": "person-005",
+    "name": "Biologist Collaborator (Add Name)",
+    "role": "Affiliated Researchers / Biological Sciences",
+    "affiliation": "Partner Institution",
+    "bio": "Contributes biological validation strategy, wet-lab integration, and interpretation across cross-institution projects.",
+    "image": "assets/images/people/person-005.jpg",
+    "email": ""
+  },
+  {
+    "id": "person-006",
+    "name": "Biologist Collaborator (Add Name)",
+    "role": "Affiliated Researchers / Biological Sciences",
+    "affiliation": "Partner Institution",
+    "bio": "Supports experimental design, biological contextualization, and collaborative manuscript development.",
+    "image": "assets/images/people/person-006.jpg",
+    "email": ""
+  }
+]

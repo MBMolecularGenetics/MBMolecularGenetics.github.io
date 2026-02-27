@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications | Infectious Disease Genomics and Bioinformatics Initiative</title>
+  <meta name="description" content="Selected publications and output from pathogen genomics and metagenomics collaborations.">
+  <meta name="theme-color" content="#0c4f68">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-kicker">INBI Matei Bals | Bucharest</span>
+          <span class="brand-title">Infectious Disease Genomics and Bioinformatics Initiative</span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="capabilities.html">Capabilities</a>
+          <a href="team.html">Team</a>
+          <a class="is-active" href="publications.html">Publications</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="hero-copy">
+            <p class="kicker">Scholarly Output</p>
+            <h1>Publication record for pathogen genomics and bioinformatics research.</h1>
+            <p class="lead">
+              This page is generated from structured metadata and can be expanded with new publications
+              as soon as manuscripts, preprints, or accepted papers are available.
+            </p>
+          </article>
+          <aside class="hero-panel">
+            <p class="kicker">Metadata Schema</p>
+            <ul>
+              <li>DOI</li>
+              <li>Year</li>
+              <li>Title</li>
+              <li>Abstract</li>
+              <li>Publisher</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div id="pub-count" class="notice" style="margin-bottom:14px;"></div>
+          <div id="publication-list" class="data-layout" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container notice">
+          <p class="kicker">Data Source</p>
+          <h3>Publication cards are generated from JSON</h3>
+          <p>
+            Edit <code>data/publications.json</code> to add or update records. Each entry includes DOI, year,
+            title, abstract, and publisher fields.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>&copy; <span data-year></span> Infectious Disease Genomics and Bioinformatics Initiative</p>
+        <p><a href="team.html">Team</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="scripts/site.js"></script>
+  <script src="scripts/publications.js"></script>
+</body>
+</html>

@@ -1,27 +1,34 @@
-# Molecular Diagnostics and Genomics - GitHub Pages Site
+# Infectious Disease Genomics and Bioinformatics Initiative Website
 
-This repository hosts a static website for the Molecular Diagnostics and Genomics group (INBI Matei Bals, Bucharest).
+Static GitHub Pages website for a research-focused initiative centered on infectious disease genomics, metagenomics, and bioinformatics collaboration.
 
-## Publish on GitHub Pages
+## Pages
 
-1. Push this repository to GitHub.
-2. Open **Settings > Pages**.
-3. Under **Build and deployment**, choose:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main` (or your default branch), folder `/ (root)`
-4. Save, then wait for deployment.
-5. Your site will be available at:
-   - `https://<username>.github.io/<repository>/`
-   - or `https://<username>.github.io/` if the repo is named `<username>.github.io`
+- `index.html`: Home and positioning
+- `capabilities.html`: Technical scope and research services
+- `team.html`: Team members loaded from JSON
+- `publications.html`: Publication records loaded from JSON
 
-## Files
+## Structured Data
 
-- `index.html`: Main page content and structure.
-- `styles.css`: Visual styling and responsive layout.
-- `.nojekyll`: Disables Jekyll processing for pure static hosting.
+- `data/people.json`
+  - fields: `id`, `name`, `role`, `affiliation`, `bio`, `image`, `email`
+- `data/publications.json`
+  - fields: `id`, `doi`, `year`, `title`, `abstract`, `publisher`
 
-## Content to update before publishing
+## Images
 
-- Contact email and phone number in `index.html`.
-- Team-specific metrics in the hero panel.
-- Any institutional links, logos, or project references.
+Add team photos to `assets/images/people/` and keep filenames aligned with each `image` value in `data/people.json`.
+
+## Deploy to GitHub Pages
+
+1. Push to GitHub.
+2. Open `Settings > Pages`.
+3. Source: `Deploy from a branch`.
+4. Branch: `main`, folder: `/ (root)`.
+5. Wait for deployment to complete.
+
+## Notes
+
+- The site is designed as a research collaboration portal, not a clinical diagnostics advertising page.
+- Update placeholders (emails, names, DOI values) before final public release.
