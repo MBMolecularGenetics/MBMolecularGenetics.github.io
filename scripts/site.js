@@ -19,12 +19,12 @@
   const tones = ["tone-a", "tone-b", "tone-c", "tone-d", "tone-e"];
   let cycle = 0;
 
-  const escapeHtml = (value) => value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+  const escapeHtml = (value) => String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 
   const shuffle = (input) => {
     const clone = [...input];

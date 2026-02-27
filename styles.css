@@ -115,10 +115,6 @@ a {
   align-items: stretch;
 }
 
-.hero-grid-single {
-  grid-template-columns: 1fr;
-}
-
 .hero-panel,
 .card,
 .metric,
@@ -183,7 +179,13 @@ h2 {
 }
 
 .buzzword-wrap {
-  margin-top: 24px;
+  margin-top: 14px;
+}
+
+.buzz-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .buzzword-grid {
