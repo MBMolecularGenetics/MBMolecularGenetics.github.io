@@ -327,8 +327,6 @@ h2 {
 }
 
 .story-pegas {
-  justify-content: flex-end;
-  align-items: flex-start;
   background:
     radial-gradient(circle at 22% 20%, rgba(11, 154, 116, 0.34), transparent 46%),
     radial-gradient(circle at 80% 74%, rgba(15, 111, 136, 0.22), transparent 44%),
@@ -336,8 +334,12 @@ h2 {
 }
 
 .story-pegas .story-inner {
-  margin: clamp(24px, 4vh, 52px) clamp(26px, 4vw, 60px) 0 auto;
+  position: absolute;
+  top: clamp(20px, 4vh, 52px);
+  right: clamp(22px, 4vw, 60px);
+  margin: 0;
   width: min(760px, calc(100vw - 4rem));
+  max-width: 56ch;
 }
 
 .story-inner {
@@ -626,8 +628,9 @@ h2 {
   }
 
   .story-pegas .story-inner {
-    margin: clamp(16px, 3vh, 30px) auto 0;
-    width: calc(100vw - 1.8rem);
+    top: clamp(14px, 3vh, 28px);
+    right: clamp(12px, 2.8vw, 28px);
+    width: min(700px, calc(100vw - 2.4rem));
   }
 }
 
@@ -653,6 +656,15 @@ h2 {
 
   .story-title {
     font-size: clamp(2rem, 13vw, 4.2rem);
+  }
+
+  .story-pegas .story-inner {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: calc(100vw - 1.8rem);
+    margin: 0 auto clamp(20px, 4vh, 36px);
+    max-width: none;
   }
 }
 
