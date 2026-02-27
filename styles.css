@@ -191,35 +191,44 @@ h2 {
 }
 
 .buzzword-grid {
-  min-height: 220px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  align-content: flex-start;
+  min-height: 228px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.buzz-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.buzz-line.tab-1 {
+  padding-left: 1.2rem;
+}
+
+.buzz-line.tab-2 {
+  padding-left: 2.4rem;
 }
 
 .buzzword-chip {
   display: inline-flex;
   align-items: center;
-  min-height: 42px;
-  width: 100%;
-  padding: 9px 12px;
-  border-radius: 9px;
-  font-size: 0.94rem;
+  width: auto;
+  padding: 0.45em 0.9em;
+  border-radius: 999px;
+  font-size: clamp(0.82rem, 1vw, 0.95rem);
   font-weight: 700;
   letter-spacing: 0.01em;
   border: 1px solid transparent;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22), 0 4px 12px rgba(12, 79, 104, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22), 0 2px 10px rgba(12, 79, 104, 0.08);
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 340ms ease, transform 340ms ease, background-color 700ms ease, color 700ms ease, border-color 700ms ease;
-}
-
-.buzzword-chip::before {
-  content: "// ";
-  opacity: 0.68;
-  margin-right: 4px;
+  transition: opacity 520ms ease, transform 520ms ease, background-color 700ms ease, color 700ms ease, border-color 700ms ease;
 }
 
 .buzzword-chip.is-hidden {

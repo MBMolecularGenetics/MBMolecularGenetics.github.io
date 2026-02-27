@@ -18,6 +18,16 @@
 
   const tones = ["tone-a", "tone-b", "tone-c", "tone-d", "tone-e"];
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const linePattern = [
+    { count: 1, indent: 0 },
+    { count: 2, indent: 1 },
+    { count: 3, indent: 2 },
+    { count: 3, indent: 1 },
+  ];
+  const totalWordsPerCycle = linePattern.reduce((sum, line) => sum + line.count, 0);
+  const revealStepMs = 375;
+  const holdMs = 3000;
+  const hideMs = 1260;
   let toneCycle = 0;
   let lastOrderKey = "";
 
@@ -37,36 +47,57 @@
     return clone;
   };
 
-  const nextOrder = () => {
-    let ordered = shuffle(words);
-    if (ordered.length > 1) {
-      const key = ordered.join("|");
-      if (key === lastOrderKey) {
-        ordered = ordered.slice(1).concat(ordered[0]);
-      }
+  const pickWords = (count) => {
+    if (words.length >= count) {
+      return shuffle(words).slice(0, count);
     }
-    lastOrderKey = ordered.join("|");
-    return ordered;
+
+    let picked = [];
+    while (picked.length < count) {
+      picked = picked.concat(shuffle(words));
+    }
+    return picked.slice(0, count);
   };
 
-  const renderWords = (ordered, hidden) => {
-    buzzwordGrid.innerHTML = ordered.map((word, index) => {
-      const tone = tones[(index + toneCycle) % tones.length];
-      const hiddenClass = hidden ? " is-hidden" : "";
-      return `<span class="buzzword-chip ${tone}${hiddenClass}">${escapeHtml(word)}</span>`;
+  const nextLayout = () => {
+    let selected = pickWords(totalWordsPerCycle);
+    let key = selected.join("|");
+    if (key === lastOrderKey && selected.length > 1) {
+      selected = selected.slice(1).concat(selected[0]);
+      key = selected.join("|");
+    }
+    lastOrderKey = key;
+
+    let cursor = 0;
+    return linePattern.map((line) => {
+      const chunk = selected.slice(cursor, cursor + line.count);
+      cursor += line.count;
+      return { indent: line.indent, words: chunk };
+    });
+  };
+
+  const renderWords = (lines, hidden) => {
+    let globalIndex = 0;
+    buzzwordGrid.innerHTML = lines.map((line) => {
+      const chips = line.words.map((word) => {
+        const tone = tones[(globalIndex + toneCycle) % tones.length];
+        const hiddenClass = hidden ? " is-hidden" : "";
+        globalIndex += 1;
+        return `<span class="buzzword-chip ${tone}${hiddenClass}">${escapeHtml(word)}</span>`;
+      }).join("");
+      return `<div class="buzz-line tab-${line.indent}">${chips}</div>`;
     }).join("");
   };
 
   const revealOneByOne = (chips, done) => {
-    const stepMs = 125;
     chips.forEach((chip, index) => {
       window.setTimeout(() => {
         chip.classList.remove("is-hidden");
         chip.classList.add("is-visible");
-      }, index * stepMs);
+      }, index * revealStepMs);
     });
 
-    const totalMs = chips.length * stepMs + 360;
+    const totalMs = chips.length * revealStepMs + 540;
     window.setTimeout(done, totalMs);
   };
 
@@ -75,12 +106,12 @@
       chip.classList.add("is-hidden");
       chip.classList.remove("is-visible");
     });
-    window.setTimeout(done, 420);
+    window.setTimeout(done, hideMs);
   };
 
   const runCycle = () => {
-    const ordered = nextOrder();
-    renderWords(ordered, !prefersReducedMotion);
+    const lines = nextLayout();
+    renderWords(lines, !prefersReducedMotion);
     const chips = Array.from(buzzwordGrid.querySelectorAll(".buzzword-chip"));
 
     if (prefersReducedMotion) {
@@ -94,18 +125,9 @@
           toneCycle = (toneCycle + 1) % tones.length;
           runCycle();
         });
-      }, 1000);
+      }, holdMs);
     });
   };
 
   runCycle();
-
-  // Keep existing chips from flashing if script is cached and reloaded.
-  window.addEventListener("beforeunload", () => {
-    const chips = buzzwordGrid.querySelectorAll(".buzzword-chip");
-    chips.forEach((chip) => {
-      chip.classList.remove("is-hidden");
-      chip.classList.remove("is-visible");
-    });
-  });
 })();
