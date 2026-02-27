@@ -156,4 +156,37 @@
   };
 
   runCycle();
+
+  const storyPanels = Array.from(document.querySelectorAll("[data-story-panel]"));
+  if (storyPanels.length > 0) {
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    let ticking = false;
+
+    const updateStories = () => {
+      storyPanels.forEach((panel) => {
+        const rect = panel.getBoundingClientRect();
+        const travel = rect.height + window.innerHeight;
+        const progress = clamp((window.innerHeight - rect.top) / travel, 0, 1);
+        const visibility = clamp(1 - Math.abs(progress - 0.5) * 2, 0, 1);
+
+        panel.style.setProperty("--story-progress", progress.toFixed(4));
+        panel.style.setProperty("--story-visibility", visibility.toFixed(4));
+      });
+    };
+
+    const onScroll = () => {
+      if (ticking) {
+        return;
+      }
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        updateStories();
+        ticking = false;
+      });
+    };
+
+    updateStories();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+  }
 })();
