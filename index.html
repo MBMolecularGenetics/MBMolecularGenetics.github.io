@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260227g">
+  <link rel="stylesheet" href="styles.css?v=20260227h">
 </head>
 <body>
   <div class="site">
@@ -64,12 +64,11 @@
         </div>
       </section>
 
-      <section class="story-stack" aria-label="Project stories">
-        <div class="container">
-          <article class="story-panel" data-story-panel>
-            <div class="story-card story-radar">
-              <div class="story-image-tag">RADAR IMAGE PLACEHOLDER</div>
-              <div class="story-copy">
+      <section class="story-sequence" aria-label="Project stories">
+        <div class="story-scroll">
+          <div class="story-viewport" data-story-sequence>
+            <article class="story-slide story-radar" data-story-slide>
+              <div class="story-inner">
                 <p class="kicker">Project Story</p>
                 <h2 class="story-title">RADAR</h2>
                 <p class="story-text">
@@ -77,14 +76,12 @@
                   connecting laboratory sequencing signals with bioinformatics interpretation for
                   faster situational awareness.
                 </p>
+                <p class="story-image-tag">RADAR IMAGE PLACEHOLDER</p>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="story-panel" data-story-panel>
-            <div class="story-card story-pegas">
-              <div class="story-image-tag">PEGAS IMAGE PLACEHOLDER</div>
-              <div class="story-copy">
+            <article class="story-slide story-pegas" data-story-slide>
+              <div class="story-inner">
                 <p class="kicker">Project Story</p>
                 <h2 class="story-title">PeGAS</h2>
                 <p class="story-text">
@@ -92,9 +89,10 @@
                   combining resistance profiling, virulence characterization, and pangenome analysis
                   in a streamlined research pipeline.
                 </p>
+                <p class="story-image-tag">PEGAS IMAGE PLACEHOLDER</p>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -116,6 +114,6 @@
       </div>
     </footer>
   </div>
-  <script src="scripts/site.js?v=20260227g"></script>
+  <script src="scripts/site.js?v=20260227h"></script>
 </body>
 </html>

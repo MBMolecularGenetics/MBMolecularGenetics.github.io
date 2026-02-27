@@ -157,20 +157,49 @@
 
   runCycle();
 
-  const storyPanels = Array.from(document.querySelectorAll("[data-story-panel]"));
-  if (storyPanels.length > 0) {
+  const heroGrid = document.querySelector(".hero .hero-grid");
+  const storySequence = document.querySelector("[data-story-sequence]")?.closest(".story-sequence");
+  const storySlides = Array.from(document.querySelectorAll("[data-story-slide]"));
+
+  if ((heroGrid || storySlides.length > 0) && storySequence) {
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
     let ticking = false;
 
-    const updateStories = () => {
-      storyPanels.forEach((panel) => {
-        const rect = panel.getBoundingClientRect();
-        const travel = rect.height + window.innerHeight;
-        const progress = clamp((window.innerHeight - rect.top) / travel, 0, 1);
-        const visibility = clamp(1 - Math.abs(progress - 0.5) * 2, 0, 1);
+    const updateStorySequence = () => {
+      if (heroGrid) {
+        const heroRect = heroGrid.getBoundingClientRect();
+        const heroFade = clamp((heroRect.bottom - 90) / (window.innerHeight * 0.65), 0, 1);
+        heroGrid.style.opacity = heroFade.toFixed(4);
+        heroGrid.style.transform = `translateY(${((1 - heroFade) * 14).toFixed(2)}px)`;
+      }
 
-        panel.style.setProperty("--story-progress", progress.toFixed(4));
-        panel.style.setProperty("--story-visibility", visibility.toFixed(4));
+      if (storySlides.length === 0) {
+        return;
+      }
+
+      if (prefersReducedMotion) {
+        storySlides.forEach((slide, index) => {
+          slide.style.setProperty("--slide-opacity", index === 0 ? "1" : "0");
+          slide.style.setProperty("--slide-scale", "1");
+          slide.style.setProperty("--story-progress", "0.5");
+        });
+        return;
+      }
+
+      const rect = storySequence.getBoundingClientRect();
+      const scrollRange = Math.max(1, rect.height - window.innerHeight);
+      const progress = clamp((-rect.top) / scrollRange, 0, 1);
+      const segments = Math.max(1, storySlides.length - 1);
+
+      storySlides.forEach((slide, index) => {
+        const anchor = index / segments;
+        const localDistance = Math.abs(progress - anchor) * segments;
+        const opacity = clamp(1 - localDistance, 0, 1);
+        const scale = 1 - ((1 - opacity) * 0.006);
+
+        slide.style.setProperty("--slide-opacity", opacity.toFixed(4));
+        slide.style.setProperty("--slide-scale", scale.toFixed(4));
+        slide.style.setProperty("--story-progress", progress.toFixed(4));
       });
     };
 
@@ -180,12 +209,12 @@
       }
       ticking = true;
       window.requestAnimationFrame(() => {
-        updateStories();
+        updateStorySequence();
         ticking = false;
       });
     };
 
-    updateStories();
+    updateStorySequence();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
   }
