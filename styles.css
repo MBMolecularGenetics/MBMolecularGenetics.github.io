@@ -191,10 +191,10 @@ h2 {
 }
 
 .buzzword-grid {
-  min-height: 228px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
   align-items: flex-start;
 }
 
@@ -214,13 +214,17 @@ h2 {
   padding-left: 2.4rem;
 }
 
+.buzz-line.tab-3 {
+  padding-left: 3.6rem;
+}
+
 .buzzword-chip {
   display: inline-flex;
   align-items: center;
   width: auto;
-  padding: 0.45em 0.9em;
+  padding: 0.32em 0.82em;
   border-radius: 999px;
-  font-size: clamp(0.82rem, 1vw, 0.95rem);
+  font-size: clamp(0.78rem, 0.96vw, 0.9rem);
   font-weight: 700;
   letter-spacing: 0.01em;
   border: 1px solid transparent;

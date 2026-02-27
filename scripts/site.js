@@ -18,17 +18,40 @@
 
   const tones = ["tone-a", "tone-b", "tone-c", "tone-d", "tone-e"];
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const linePattern = [
-    { count: 1, indent: 0 },
-    { count: 2, indent: 1 },
-    { count: 3, indent: 2 },
-    { count: 3, indent: 1 },
+  const linePatterns = [
+    [
+      { count: 1, indent: 0 },
+      { count: 2, indent: 1 },
+      { count: 3, indent: 2 },
+      { count: 2, indent: 3 },
+      { count: 3, indent: 2 },
+      { count: 2, indent: 1 },
+    ],
+    [
+      { count: 1, indent: 0 },
+      { count: 2, indent: 1 },
+      { count: 2, indent: 2 },
+      { count: 3, indent: 1 },
+      { count: 1, indent: 3 },
+      { count: 3, indent: 2 },
+      { count: 2, indent: 1 },
+    ],
+    [
+      { count: 1, indent: 0 },
+      { count: 1, indent: 1 },
+      { count: 2, indent: 2 },
+      { count: 3, indent: 3 },
+      { count: 2, indent: 2 },
+      { count: 3, indent: 1 },
+      { count: 2, indent: 2 },
+      { count: 1, indent: 1 },
+    ],
   ];
-  const totalWordsPerCycle = linePattern.reduce((sum, line) => sum + line.count, 0);
   const revealStepMs = 375;
   const holdMs = 3000;
   const hideMs = 1260;
   let toneCycle = 0;
+  let patternCycle = 0;
   let lastOrderKey = "";
 
   const escapeHtml = (value) => String(value)
@@ -60,7 +83,9 @@
   };
 
   const nextLayout = () => {
-    let selected = pickWords(totalWordsPerCycle);
+    const activePattern = linePatterns[patternCycle % linePatterns.length];
+    const wordsInPattern = activePattern.reduce((sum, line) => sum + line.count, 0);
+    let selected = pickWords(wordsInPattern);
     let key = selected.join("|");
     if (key === lastOrderKey && selected.length > 1) {
       selected = selected.slice(1).concat(selected[0]);
@@ -69,7 +94,7 @@
     lastOrderKey = key;
 
     let cursor = 0;
-    return linePattern.map((line) => {
+    return activePattern.map((line) => {
       const chunk = selected.slice(cursor, cursor + line.count);
       cursor += line.count;
       return { indent: line.indent, words: chunk };
@@ -123,6 +148,7 @@
       window.setTimeout(() => {
         hideAll(chips, () => {
           toneCycle = (toneCycle + 1) % tones.length;
+          patternCycle = (patternCycle + 1) % linePatterns.length;
           runCycle();
         });
       }, holdMs);
