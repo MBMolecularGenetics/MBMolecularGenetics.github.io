@@ -115,6 +115,10 @@ a {
   align-items: stretch;
 }
 
+.hero-grid-single {
+  grid-template-columns: 1fr;
+}
+
 .hero-panel,
 .card,
 .metric,
@@ -176,6 +180,66 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.buzzword-wrap {
+  margin-top: 24px;
+}
+
+.buzzword-grid {
+  min-height: 124px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start;
+  opacity: 1;
+  transition: opacity 320ms ease;
+}
+
+.buzzword-grid.is-fading {
+  opacity: 0.24;
+}
+
+.buzzword-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  transition: background-color 640ms ease, color 640ms ease, border-color 640ms ease;
+}
+
+.tone-a {
+  color: #0c4f68;
+  background: rgba(15, 111, 136, 0.16);
+  border-color: rgba(15, 111, 136, 0.3);
+}
+
+.tone-b {
+  color: #10495a;
+  background: rgba(11, 154, 116, 0.16);
+  border-color: rgba(11, 154, 116, 0.3);
+}
+
+.tone-c {
+  color: #0f3d54;
+  background: rgba(12, 79, 104, 0.15);
+  border-color: rgba(12, 79, 104, 0.28);
+}
+
+.tone-d {
+  color: #0e5266;
+  background: rgba(70, 96, 114, 0.16);
+  border-color: rgba(70, 96, 114, 0.28);
+}
+
+.tone-e {
+  color: #114d4c;
+  background: rgba(11, 154, 116, 0.13);
+  border-color: rgba(15, 111, 136, 0.24);
 }
 
 .btn {
