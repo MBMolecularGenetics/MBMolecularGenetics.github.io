@@ -327,10 +327,17 @@ h2 {
 }
 
 .story-pegas {
+  justify-content: flex-end;
+  align-items: flex-start;
   background:
     radial-gradient(circle at 22% 20%, rgba(11, 154, 116, 0.34), transparent 46%),
     radial-gradient(circle at 80% 74%, rgba(15, 111, 136, 0.22), transparent 44%),
     linear-gradient(138deg, #1d4f64, #17776a 40%, #3d5e78 100%);
+}
+
+.story-pegas .story-inner {
+  margin: clamp(24px, 4vh, 52px) clamp(26px, 4vw, 60px) 0 auto;
+  width: min(760px, calc(100vw - 4rem));
 }
 
 .story-inner {
@@ -615,6 +622,11 @@ h2 {
   }
 
   .story-inner {
+    width: calc(100vw - 1.8rem);
+  }
+
+  .story-pegas .story-inner {
+    margin: clamp(16px, 3vh, 30px) auto 0;
     width: calc(100vw - 1.8rem);
   }
 }
