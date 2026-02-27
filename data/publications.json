@@ -1,11 +1,11 @@
 [
   {
     "id": "pub-2025-001",
-    "doi": "10.XXXX/replace-with-real-doi-001",
+    "doi": "10.1093/bioadv/vbaf165",
     "year": 2025,
-    "title": "Clinical and Environmental Pathogen Genomics: An Integrated Translational Workflow",
-    "abstract": "This work describes a framework linking infectious disease clinical context with high-throughput sequencing and bioinformatics. We present reproducible quality control and analysis modules for viral, bacterial, and fungal genomic datasets and evaluate their utility in translational studies.",
-    "publisher": "Publisher to be confirmed"
+    "title": "PeGAS: a versatile bioinformatics pipeline for antimicrobial resistance, virulence and pangenome analysis",
+    "abstract": "PeGAS is presented as a versatile bioinformatics pipeline for integrated antimicrobial resistance, virulence, and pangenome analysis, designed to streamline comparative pathogen genomics workflows.",
+    "publisher": "Oxford University Press"
   },
   {
     "id": "pub-2024-002",
