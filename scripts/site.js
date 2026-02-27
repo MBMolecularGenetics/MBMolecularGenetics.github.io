@@ -18,6 +18,7 @@
 
   const tones = ["tone-a", "tone-b", "tone-c", "tone-d", "tone-e"];
   let cycle = 0;
+  let offset = 0;
 
   const escapeHtml = (value) => String(value)
     .replace(/&/g, "&amp;")
@@ -26,17 +27,16 @@
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 
-  const shuffle = (input) => {
-    const clone = [...input];
-    for (let i = clone.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [clone[i], clone[j]] = [clone[j], clone[i]];
+  const rotate = (input, shift) => {
+    if (input.length === 0) {
+      return [];
     }
-    return clone;
+    const normalized = ((shift % input.length) + input.length) % input.length;
+    return input.slice(normalized).concat(input.slice(0, normalized));
   };
 
   const renderWords = () => {
-    const ordered = shuffle(words);
+    const ordered = rotate(words, offset);
     buzzwordGrid.innerHTML = ordered.map((word, index) => {
       const tone = tones[(index + cycle) % tones.length];
       return `<span class="buzzword-chip ${tone}">${escapeHtml(word)}</span>`;
@@ -45,16 +45,13 @@
 
   renderWords();
 
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
-  }
-
   window.setInterval(() => {
     buzzwordGrid.classList.add("is-fading");
     window.setTimeout(() => {
       cycle = (cycle + 1) % tones.length;
+      offset = (offset + 3) % words.length;
       renderWords();
       buzzwordGrid.classList.remove("is-fading");
-    }, 260);
+    }, 320);
   }, 2000);
 })();

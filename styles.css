@@ -192,56 +192,58 @@ h2 {
   min-height: 124px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 11px;
   align-content: flex-start;
   opacity: 1;
-  transition: opacity 320ms ease;
+  transition: opacity 420ms ease, filter 420ms ease;
 }
 
 .buzzword-grid.is-fading {
-  opacity: 0.24;
+  opacity: 0.12;
+  filter: blur(1px);
 }
 
 .buzzword-chip {
   display: inline-flex;
   align-items: center;
-  padding: 8px 12px;
-  border-radius: 12px;
-  font-size: 0.8rem;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   border: 1px solid transparent;
-  transition: background-color 640ms ease, color 640ms ease, border-color 640ms ease;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  transition: background-color 700ms ease, color 700ms ease, border-color 700ms ease, transform 280ms ease;
 }
 
 .tone-a {
-  color: #0c4f68;
-  background: rgba(15, 111, 136, 0.16);
-  border-color: rgba(15, 111, 136, 0.3);
+  color: #0b3e52;
+  background: rgba(15, 111, 136, 0.28);
+  border-color: rgba(15, 111, 136, 0.44);
 }
 
 .tone-b {
-  color: #10495a;
-  background: rgba(11, 154, 116, 0.16);
-  border-color: rgba(11, 154, 116, 0.3);
+  color: #0f3e4f;
+  background: rgba(11, 154, 116, 0.28);
+  border-color: rgba(11, 154, 116, 0.44);
 }
 
 .tone-c {
-  color: #0f3d54;
-  background: rgba(12, 79, 104, 0.15);
-  border-color: rgba(12, 79, 104, 0.28);
+  color: #0b3852;
+  background: rgba(12, 79, 104, 0.26);
+  border-color: rgba(12, 79, 104, 0.42);
 }
 
 .tone-d {
-  color: #0e5266;
-  background: rgba(70, 96, 114, 0.16);
-  border-color: rgba(70, 96, 114, 0.28);
+  color: #1c4c63;
+  background: rgba(70, 96, 114, 0.24);
+  border-color: rgba(70, 96, 114, 0.4);
 }
 
 .tone-e {
-  color: #114d4c;
-  background: rgba(11, 154, 116, 0.13);
-  border-color: rgba(15, 111, 136, 0.24);
+  color: #0e4a49;
+  background: rgba(11, 154, 116, 0.22);
+  border-color: rgba(15, 111, 136, 0.36);
 }
 
 .btn {
